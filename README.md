@@ -28,16 +28,99 @@ F=(((C.B'.A)+(D.C'.A)+(C.B'.A))')'
 
 ## Logic Diagram
 ## Procedure
+
+1. Create a project with required entities
+
+2. Create a module along with respective file name.
+
+3. Run the respective programs for the given boolean equations
+
+4. Run the module and get the respective RTL outputs
+
+5. Create university program(VWF) for getting timing diagram
+
+6. Give the respective inputs for timing diagram and obtain the results
 ## Program:
+
+Using NAND Operation:
+
+module combine1(A,B,C,D,F);
+
+input A,B,C,D;
+
+output F;
+
+wire P,QR;
+
+assign P - C&(~B)&(~A);
+
+assign Q D&(~C)&(~A);
+
+assign R= (~C)&B&(~A);
+
+assign F - (~P&~Q&~R);
+
+endmodule
+
+Using NOR Operation:
+
+module combine2(A,B,C,D,F);
+
+input A,B,C,D;
+
+output F;
+
+wire P,QR,S;
+
+assign P = C&(~B)&A;
+
+assign Q D&(~C)&A;
+
+assign R=C&(~B)&A;
+
+
+assign S =~(P|Q|R);
+
+assign F ~S;
+
+endmodule
 /*
 Program to implement the given logic function using NAND and NOR gates and to verify its operations in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: Naveen M 
+RegisterNumber: 22000748
 */
-## RTL realization
 
 ## Output:
+
+NAND
+
 ## RTL
+
+![Screenshot_20230111_185515_Drive](https://user-images.githubusercontent.com/117974950/211818759-6b6d64ec-30db-43f4-8192-2a06a418a9f7.jpg)
+
+Truth table
+
+![Screenshot_20230111_185557_Drive](https://user-images.githubusercontent.com/117974950/211819189-2665c0c6-2b2d-4d3d-8557-6a7feb5edb1f.jpg)
+
+
 ## Timing Diagram
+
+![Screenshot_20230111_185631_Drive](https://user-images.githubusercontent.com/117974950/211819225-9c73ae92-0d25-4cab-bf81-8a41ce7ec8f6.jpg)
+
+NOR
+
+RTL
+
+![Screenshot_20230111_190724_Drive](https://user-images.githubusercontent.com/117974950/211822789-10c1abc6-43c1-420d-b563-99b7fce576ba.jpg)
+
+
+Truth table 
+
+![Screenshot_20230111_190749_Drive](https://user-images.githubusercontent.com/117974950/211822871-786b1c56-b5dd-4c59-a114-7544c59f4b9b.jpg)
+
+Timing Diagram 
+
+![Screenshot_20230111_190824_Drive](https://user-images.githubusercontent.com/117974950/211822956-abedd619-1e3b-4f1c-a2f0-9192f0d21e07.jpg)
+
 ## Result:
 Thus the given logic functions are implemented using NAND and NOR gates and their operations are verified using Verilog programming.
